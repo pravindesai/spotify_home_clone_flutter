@@ -15,8 +15,16 @@ class NewSongCard extends StatelessWidget {
               children: [
                 Expanded(
                   flex: 1,
-                  child: Image.network(
-                      "https://concertstour.com/wp-content/uploads/2020/10/Eminem.jpg"),
+                  child: FadeInImage(
+                    image: NetworkImage(
+                        "https://concertstour.com/wp-content/uploads/2020/10/Eminem.jpg"),
+                    placeholder: const AssetImage("images/spotify.png"),
+                    imageErrorBuilder: (context, error, stackTrace) {
+                      return Image.asset('images/spotify.png',
+                          fit: BoxFit.fitWidth);
+                    },
+                    fit: BoxFit.fitWidth,
+                  ),
                 ),
                 const Expanded(
                     flex: 1,

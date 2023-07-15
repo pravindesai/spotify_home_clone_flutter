@@ -13,8 +13,8 @@ class FlutterHome extends StatefulWidget {
 class _FlutterHomeState extends State<FlutterHome> {
   final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    const SearchScreen(),
-    const LibraryScreen(),
+    SearchScreen(),
+    ProfileScreen(),
   ];
 
   int selectedIndex = 0;
@@ -32,6 +32,7 @@ class _FlutterHomeState extends State<FlutterHome> {
 
     return SafeArea(
         child: Scaffold(
+      resizeToAvoidBottomInset: false,
       bottomNavigationBar: Theme(
           data: ThemeData(
             splashColor: Colors.transparent,
@@ -58,9 +59,9 @@ class _FlutterHomeState extends State<FlutterHome> {
                     color: Colors.white60,
                   )),
               BottomNavigationBarItem(
-                  label: "Library",
+                  label: "Profile",
                   icon: Icon(
-                    Icons.library_books,
+                    Icons.person,
                     color: Colors.white60,
                   ))
             ],

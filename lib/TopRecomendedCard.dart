@@ -21,7 +21,7 @@ class TopRecomended extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Expanded(flex: 1, child: TopRecomendedCard("Tea Time")),
-              Expanded(flex: 1, child: TopRecomendedCard("Power House"))
+              Expanded(flex: 1, child: TopRecomendedCard("Power \nHouse"))
             ],
           ),
           Row(
@@ -39,6 +39,7 @@ class TopRecomended extends StatelessWidget {
 
 class TopRecomendedCard extends StatelessWidget {
   const TopRecomendedCard(this.title, {super.key});
+
   final String title;
 
   @override
@@ -56,8 +57,19 @@ class TopRecomendedCard extends StatelessWidget {
             children: [
               Expanded(
                 flex: 1,
-                child: Image.network(
-                    "https://flutterawesome.com/assets/favicon.png"),
+                child: Padding(
+                  padding: EdgeInsets.all(20),
+                  child: FadeInImage(
+                    image: NetworkImage(
+                        "https://flutterawesome.com/assets/favicon.png"),
+                    placeholder: const AssetImage("images/spotify.png"),
+                    imageErrorBuilder: (context, error, stackTrace) {
+                      return Image.asset('images/spotify.png',
+                          fit: BoxFit.fitWidth);
+                    },
+                    fit: BoxFit.fitWidth,
+                  ),
+                ),
               ),
               Expanded(
                   flex: 1,

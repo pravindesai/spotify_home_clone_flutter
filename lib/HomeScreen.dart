@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:spotify_home_clone_flutter/NetworkData.dart';
 import 'package:spotify_home_clone_flutter/NewSongCard.dart';
 import 'package:spotify_home_clone_flutter/PodCastItem.dart';
 import 'package:spotify_home_clone_flutter/PodCasts.dart';
 import 'package:spotify_home_clone_flutter/Radio.dart';
 import 'package:spotify_home_clone_flutter/TopRecomendedCard.dart';
+import 'package:spotify_home_clone_flutter/network/NetworkData.dart';
 
 import 'HomeHeader.dart';
 

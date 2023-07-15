@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class PodCastItem extends StatelessWidget {
   const PodCastItem(this.title, this.imgUrl, {super.key});
+
   final String title;
   final String imgUrl;
 
@@ -22,9 +23,14 @@ class PodCastItem extends StatelessWidget {
             width: 80,
             child: Stack(
               children: [
-                const Image(
+                FadeInImage(
                   image: NetworkImage(
                       "https://flutterawesome.com/assets/favicon.png"),
+                  placeholder: const AssetImage("images/spotify.png"),
+                  imageErrorBuilder: (context, error, stackTrace) {
+                    return Image.asset('images/spotify.png',
+                        fit: BoxFit.fitWidth);
+                  },
                   alignment: Alignment.center,
                   height: double.infinity,
                   width: double.infinity,
